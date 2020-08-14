@@ -10,7 +10,7 @@ import com.example.networkchangedemo.receive.NetStateReceiver
  * @description:
  * @date :2020-08-14 14:29
  */
-class NetWorkManager() {
+class NetWorkManager {
     private var receiver: NetStateReceiver? = null
     private var application: Application? = null
 
@@ -43,6 +43,10 @@ class NetWorkManager() {
 
     fun getApplication(): Application? {
         return application
+    }
+
+    fun unRegister() {
+        application?.unregisterReceiver(receiver)
     }
 
 

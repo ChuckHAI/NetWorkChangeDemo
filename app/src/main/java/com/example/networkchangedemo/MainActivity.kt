@@ -23,4 +23,9 @@ class MainActivity : AppCompatActivity(), NetChangeListener {
         Log.i("++++++++++++", "当前网路是" + netType.name)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        NetWorkManager.getDefault().unRegister()
+    }
+
 }
